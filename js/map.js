@@ -3,6 +3,16 @@ const h = 600;
 let x = null;
 let y = null;
 let dataset = [];
+var data;
+Papa.parse('test.csv',{
+    header: true,
+    download: true,
+    dynamicTyping: true,
+    complete: function(results){
+        console.log(results);
+        data = results.data;
+    }
+});
 //Create SVG element
 // let svg = d3.select("body")
 //             .append("svg")
