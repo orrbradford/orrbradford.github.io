@@ -117,6 +117,64 @@ function reload(){
             });
         //add circles to svg
         var data;
+        // Papa.parse('data/locations.csv',{
+        //     header: true,
+        //     download: true,
+        //     dynamicTyping: true,
+        //     complete: function(results){
+        //         console.log(results);
+        //         data1 = results.data;
+        //         const node = svg.selectAll("g")
+        //             .data(data1)
+        //             .enter()
+        //             .append("g")
+        //             .attr("x", function (d) { 
+        //                 //console.log(projection([d["longitude"],d["latitude"]])); 
+        //                 return projection([d[" longitude"],d[" latitude"]])[0]; 
+        //             })
+        //             .attr("y", function (d) { return projection([d[" longitude"],d[" latitude"]])[1]; })
+        //         var circle = node.append("circle")
+        //                 .attr("r", "10px")
+        //                 .attr("fill", "yellow")
+        //                 .attr("cx", function (d) { 
+        //                     //console.log(projection([d["longitude"],d["latitude"]])); 
+        //                     return projection([d[" longitude"],d[" latitude"]])[0]; 
+        //                 })
+        //                 .attr("cy", function (d) { return projection([d[" longitude"],d[" latitude"]])[1]; })
+        //                 .attr("text", function(d){return d["location"]})
+        //                 .on("click", function(d, i){
+        //                     console.log(d);
+        //                 });
+        //             // .selectAll("circle")
+        //             // .data(data1)
+        //             // .enter()
+        //             // .append("circle")
+        //             // .attr("cx", function (d) { 
+        //             //     //console.log(projection([d["longitude"],d["latitude"]])); 
+        //             //     return projection([d[" longitude"],d[" latitude"]])[0]; 
+        //             // })
+        //             // .attr("cy", function (d) { return projection([d[" longitude"],d[" latitude"]])[1]; })
+                
+        //             var text = node.append("text")
+        //                 .attr("x", function (d) { 
+        //                     //console.log(projection([d["longitude"],d["latitude"]])); 
+        //                     return projection([d[" longitude"],d[" latitude"]])[0]; 
+        //                 })
+        //                 .attr("y", function (d) { return projection([d[" longitude"],d[" latitude"]])[1]; })
+        //                 .attr("dx", -20)
+        //                 .text(function(d){return d.location});
+        //         // const node = svg.append('g')
+        //         //     .append("text")
+        //         //         .attr("dx", function (d) { 
+        //         //             //console.log(projection([d["longitude"],d["latitude"]])); 
+        //         //             return -20;
+        //         //             return projection([d[" longitude"],d[" latitude"]])[0]; 
+        //         //         })
+        //         //         // .attr("cy", function (d) { return projection([d[" longitude"],d[" latitude"]])[1]; })
+        //         //         .text(function(d){d.location});
+                        
+        //     }
+        // });
         Papa.parse('data/fullgpsedited.csv',{
             header: true,
             download: true,
@@ -130,28 +188,44 @@ function reload(){
                 for(i in data){
                     //console.log(data[i])
                     if(dayfilter == data[i]["Date"] && IDfilter == data[i]["id"]){
-                        console.log("yea")
-                        res.push(data[i])
+                        console.log("yea");
+                        res.push(data[i]);
                     }
+                    // if(IDfilter == data[i]["id"]){
+                    //     console.log("yea");
+                    //     res.push(data[i]);
+                    // }
                 }
                 console.log("finished for loop");
                 console.log(res);
                 svg.selectAll("circle")
-                .data(res)
-                .enter()
-                .append("circle")
-                .attr("cx", function (d) { 
-                    //console.log(projection([d["long"],d["lat"]])); 
-                    return projection([d["long"],d["lat"]])[0]; 
-                })
-                .attr("cy", function (d) { return projection([d["long"],d["lat"]])[1]; })
-                .attr("r", "2px")
-                .attr("fill", "red")
-                .on("click", function(d, i){
-                    console.log(d)
-                });
+                    .data(res)
+                    .enter()
+                    .append("circle")
+                    .attr("cx", function (d) { 
+                        return projection([d["long"],d["lat"]])[0]; 
+                    })
+                    .attr("cy", function (d) { return projection([d["long"],d["lat"]])[1]; })
+                    .attr("r", "2px")
+                    .attr("fill", "red")
+                    .on("click", function(d, i){
+                        console.log(d);
+                    });
+                d3.select("#dayRange").on("input",function(){
+                        console.log("Houston");
+                        //alert("click");
+                        let day = this.value;
+                        date = "1/" + day + "/14"
+                        svg.selectAll("svg circle").each(function(d){
+                            this.style.opacity = (d.Date == date ? 1:0)
+                        })
+                    });
+                
+
+                
     
             }
-        });
+         });
     });
+    console.log("finished reloading");
 }

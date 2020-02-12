@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Week 4 Studio: Interaction</title>
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+</head>
+<style>
+    .bar:hover {
+        opacity: 0.8 ;
+    }
+    div{
+        font-family: "Arial";
+    }
+    
+    div.tooltip {
+        position: absolute;
+        text-align: center;
+        padding: 2px;
+        background: rgb(228, 237, 245);
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+    }
+</style>
+    <div id='slider'></div>
+    <div id='report' align="center"></div>
+    <div id='bar'></div>
+    <script src='business.js'> </script>
+</body>
+</html>

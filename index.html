@@ -4,18 +4,128 @@
     <script src="js/d3.min.js"></script>
     <script src="js/papaparse.min.js"></script>
     <script src="js/topojson.min.js"></script>
-    
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <!-- <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script> -->
+
     
 </head>
+<style>
+    .bar:hover {
+        opacity: 0.8 ;
+    }
+    div{
+        font-family: "Arial";
+    }
+    
+    div.tooltip {
+        position: absolute;
+        text-align: center;
+        padding: 2px;
+        background: rgb(228, 237, 245);
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+    }
+</style>
 <body> 
     <bdy></bdy>
     <div>
-        Day: <input type="text" id="Day"><br>
-        ID: <input type="text" id="ID"><br>
+        Day: <input type="text" id="Day" value="1/6/14"><br>
+        ID: <input type="text" id="ID" value="4"><br>
         <button onclick=reload()>Reload</button>
+        <br>
+        <label for ="dayRange">Days (6-14) </label>
+        <input type="range" id="dayRange" min="6" max = "14" name ="Days"/>
+        <br>
+        <select id="ids" height = "20px" multiple>
+            <option id='1'>1</option>
+            <option id='2'>2</option>
+            <option id='3'>3</option>
+            <option id='4'>4</option>
+            <option id='5'>5</option>
+            <option id='6'>6</option>
+            <option id='7'>7</option>
+            <option id='8'>8</option>
+            <option id='9'>9</option>
+            <option id='10'>10</option>
+            <option id='11'>11</option>
+            <option id='12'>12</option>
+            <option id='13'>13</option>
+            <option id='14'>14</option>
+            <option id='15'>15</option>
+            <option id='16'>16</option>
+            <option id='17'>17</option>
+            <option id='18'>18</option>
+            <option id='19'>19</option>
+            <option id='20'>20</option>
+            <option id='21'>21</option>
+            <option id='22'>22</option>
+            <option id='23'>23</option>
+            <option id='24'>24</option>
+            <option id='25'>25</option>
+            <option id='26'>26</option>
+            <option id='27'>27</option>
+            <option id='28'>28</option>
+            <option id='29'>29</option>
+            <option id='30'>30</option>
+            <option id='31'>31</option>
+            <option id='32'>32</option>
+            <option id='33'>33</option>
+            <option id='34'>34</option>
+            <option id='35'>35</option>
+        </select>
+        <div>
+            <ul id = "filterList">
+
+            </ul>
+        </div>
     </div>
-    <script src="js/data.js"></script>  
+     
     <script src="js/test.js"></script>
+    <script>
+        var idfilter = new Set()
+        document.getElementById("ids").addEventListener("change", function(event){
+            console.log(document.getElementById("ids").value)
+            var val = document.getElementById("ids").value
+            var li = document.createElement("li")
+            li.id = val
+            li.innerHTML = val
+            li.addEventListener("click", function(){
+                document.getElementById("filterList").removeChild(this)
+            });
+            document.getElementById("filterList").append(li);
+        })
+        
+        var observer = new MutationObserver(filterUpdate)
+        const config = { attributes: true, childList: true, subtree: true };
+        observer.observe(document.getElementById("filterList"), config)
+        function filterUpdate(){
+            console.log("list changing")
+            ch = document.getElementById("filterList").children
+            console.log(ch)
+            for(var i = 0; i < ch.length; i++){
+                console.log(ch[i].id)
+                idfilter.add(ch[i].id)
+            }
+        }
+    </script>
+    <style>
+        ul{border: 2px;}
+        select{height: 400px;}
+        select>option{height: 40px; width: 40px; text-align: center;}
+    </style>
+
+
+
+    <!-- Mel's Stuff -->
+    <div id='slider'></div>
+    <div id='report' align="center"></div>
+
+    <div id='bar'></div>
+
+    <script src='js/business.js'> </script>
 </body>
 
 </html>
