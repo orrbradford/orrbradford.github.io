@@ -61,8 +61,8 @@ function drawGPS(){
                 return projection([d["long"],d["lat"]])[0]; 
             })
             .attr("y", function (d) { return projection([d["long"],d["lat"]])[1]; })
-            .attr('width', '4px')
-            .attr('height', '4px')
+            .attr('width', '7px')
+            .attr('height', '7px')
             .attr("fill", function(d){
                 /*index=parseInt(d["id"])*/
                 return color(d["id"].toString())
