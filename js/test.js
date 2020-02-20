@@ -110,16 +110,13 @@ function drawCities(){
                 tooltip.transition()
                     .style('opacity', .9);
                 tooltip.html(d['location'])
-                    .style('left', d3.mouse(this)[0] + 'px')
-                    .style('top', d3.mouse(this)[1] + 'px');
+                    .style('left', (d3.mouse(this)[0]+100) + 'px')
+                    .style('top', (d3.mouse(this)[1]+100) + 'px');
            })
            .on("mouseout",function(d){
                 tooltip.transition()
                 .duration(50)
                 .style('opacity', 0);
-            })
-            .on("click", function(d){
-                barChart(d["location"])
             });
         var circle = node.append("circle")
             .attr("r", "10px")
