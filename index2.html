@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/papaparse.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src='js/nouislider.min.js'></script>
+    <link rel="stylesheet" href="css/nouislider.min.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+    .bar:hover {
+        opacity: 0.8 ;
+    }
+    div{
+        font-family: "Garamond";
+    }
+    
+    div.tooltip {
+        position: absolute;
+        text-align: center;
+        padding: 2px;
+        background: rgb(228, 237, 245);
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+    }
+
+    svg#bargraph {
+    	transform: translate(-20px, 0px);
+    }
+
+    svg#bargraph .x.axis .tick text  {
+        transform: rotate(-45deg) translate(-5px, 20px);
+    }
+
+
+	svg#bargraph .y.axis {
+	        transform: translate(50px, -120px);
+	    }
+
+    div#sliderLabel{
+        color:white;
+        font-style:bold;
+        font-size:16px;
+    }
+    
+    .noUi-connect {
+            background: lightgrey;
+        }
+        .noUi-horizontal .noUi-handle, .noUi-vertical .noUi-handle {
+            background: lightgrey;
+ 
+        }
+        .noUi-target.noUi-horizontal .noUi-tooltip {
+            background-color: lightgrey;
+        }
+        .noUi-handle {
+            height: 25px !important;
+
+            width: 15px !important;
+            right: -5px !important; 
+            bottom: 0px !important;  /*must be (width / 2) * -1 */
+           /* background: #AA00AA;*/
+        }
+        .noUi-tooltip {
+            display: none;
+        }
+        .noUi-active .noUi-tooltip {
+            display: block;
+        }
+
+        svg #lineChart
+        div{
+            overflow: visible;
+        }
+
+        div#leftFlexBox1 {
+            display: flex;
+            height: max-content;
+            /* width: 100vw; */
+            flex-direction: row;
+            flex-grow: 1;
+        }
+     
+        div#mapAndGraph {
+            display: flex;
+            height: max-content;
+            flex-direction: column;
+            width: 100vw;
+            
+        }
+        div#outerFlexBox {
+            display: flex;
+            height:max-content;
+            align-items: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100vw;
+            overflow: visible;
+            align-items: stretch;     
+
+        }
+        div#rightFlexBox {
+            display: flex;
+            height: max-content;
+            flex-direction: column;
+            flex-flow: column wrap-reverse;
+            flex-wrap: wrap;
+            /* width: 100vw; */
+            flex-grow: 1;
+            
+        }
+        div#fullContentFlexBox {
+            display: flex;
+            height: max-content;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100vw;
+            position: relative;
+            flex-grow: 1;
+            align-items: stretch;
+            
+        }
+        div#sideBarFlexBox {
+            display: flex;
+            height: max-content;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 10vw;
+            
+            
+        }
+
+        div#entirePageFlexBox {
+            display: flex;
+            height: max-content;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            width: 100vw; 
+            
+        }
+
+        div#menuBarFlexBox {
+            display: flex;
+            height: max-content;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100vw; 
+        }
+
+        /* div{
+            overflow: visible;
+        } */
+</style>
+
+
+<body>
+    <div id="entirePageFlexBox">
+        <div id="sideBarFlexBox">
+            <div id="mySidebar">
+                <div class="w3-sidebar w3-bar-block w3-border-right" style="display:block">
+                  <button onclick="w3_close()" class="w3-bar-item w3-large">&times;</button>
+                    <div id="ids" style="width: max-content;">
+                        <input type="checkbox" id='1'> <label> Lucas Alcazar</label><br>
+                        <input type="checkbox" id='2'> <label> Lars Azada</label><br>
+                        <input type="checkbox" id='3'> <label> Felix Balas</label><br>
+                        <input type="checkbox" id='4'> <label> Ingrid Barranco</label><br>
+                        <input type="checkbox" id='5'> <label> Isak Baza</label><br>
+                        <input type="checkbox" id='6'> <label> Linnea Bergen</label><br>
+                        <input type="checkbox" id='7'> <label> Isande Borrasca</label><br>
+                        <input type="checkbox" id='8'> <label> Nils Calixto</label><br>
+                        <input type="checkbox" id='9'> <label>Axel Calzas</label><br>
+                        <input type="checkbox" id='10'> <label>Ada Campo-Corrente</label><br>
+                        <input type="checkbox" id='11'> <label>Gustav Cazar</label><br>
+                        <input type="checkbox" id='12'> <label>Hideki Cocinaro</label><br>
+                        <input type="checkbox" id='13'> <label>Inga Ferro</label><br>
+                        <input type="checkbox" id='14'> <label>Lidelse Dedos</label><br>
+                        <input type="checkbox" id='15'> <label>Loreto Bodrogi</label><br>
+                        <input type="checkbox" id='16'> <label>Isia Vann</label><br>
+                        <input type="checkbox" id='17'> <label>Sven Flecha</label><br>
+                        <input type="checkbox" id='18'> <label>Birgitta Frente</label><br>
+                        <input type="checkbox" id='19'> <label>Vira Frente</label><br>
+                        <input type="checkbox" id='20'> <label>Stenig Fusil</label><br>
+                        <input type="checkbox" id='21'> <label>Hennie Osvaldo</label><br>
+                        <input type="checkbox" id='22'> <label>Kanon Herrero</label><br>
+                        <input type="checkbox" id='23'> <label>Varja Lagos</label><br>
+                        <input type="checkbox" id='24'> <label>Minke Mies</label><br>
+                        <input type="checkbox" id='25'> <label>Adra Nubarron</label><br>
+                        <input type="checkbox" id='26'> <label>Marin Onda</label><br>
+                        <input type="checkbox" id='27'> <label>Kare Orilla</label><br>
+                        <input type="checkbox" id='28'> <label>Elsa Orilla</label><br>
+                        <input type="checkbox" id='29'> <label>Bertrand Ovan</label><br>
+                        <input type="checkbox" id='30'> <label>Felix Resumir</label><br>
+                        <input type="checkbox" id='31'> <label>Sten Sanjorge Jr.</label><br>
+                        <input type="checkbox" id='32'> <label>Orhan Strum</label><br>
+                        <input type="checkbox" id='33'> <label>Brand Tempestad</label><br>
+                        <input type="checkbox" id='34'> <label>Edvard Vann</label><br>
+                        <input type="checkbox" id='35'> <label>Willem Vasco-Pais</label><br>
+                        <input type="checkbox" id='206'> <label>Adan Morlun</label><br>
+                        <input type="checkbox" id='201'> <label>Albina Hafon</label><br>
+                        <input type="checkbox" id='202'> <label>Benito Hawelon</label><br>
+                        <input type="checkbox" id='207'> <label>Cecilia Morluniau</label><br>
+                        <input type="checkbox" id='203'> <label>Claudio Hawelon</label><br>
+                        <input type="checkbox" id='209'> <label>Dylan Scozzese</label><br>
+                        <input type="checkbox" id='204'> <label>Henk Mies</label><br>
+                        <input type="checkbox" id='208'> <label>Irene Nant</label><br>
+                        <input type="checkbox" id='205'> <label>Valeria Morlun</label><br>
+                        <input type="checkbox" id='101'> <label>Truck 1</label><br>
+                        <input type="checkbox" id='104'> <label>Truck 2</label><br>
+                        <input type="checkbox" id='105'> <label>Truck 3</label><br>
+                        <input type="checkbox" id='106'> <label>Truck 4</label><br>
+                        <input type="checkbox" id='107'> <label>Truck 5</label><br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fullContentFlexBox">
+            <div id="menuBarFlexBox">
+                <div class="w3-grey w3-xxxlarge" style="padding-left: 2em;padding-right: 2em;padding-top: 2em;">
+                    <button class="w3-button w3-grey w3-xlarge" style="padding:10%" onclick="w3_open()">></button>
+                </div>
+                <div>
+                    <div style='display: flex; flex-direction: column;'>
+                        <div id="sliderLabel" fill="white">Days (6-14)</div>
+                        <div id = "slider" style="width:60vw;"></div>
+                        <div id="sliderLabel" >Hours </div>
+                        <div id = "slider1" style="width:60vw;"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="outerFlexBox">
+                <div id="leftFlexBox1">
+                    <div id="mapAndGraph">
+                        <div id="bdy"></div>
+                            <div id="graph">
+                            <svg id="graphsvg" ></svg>
+                        </div>
+                    </div>
+                </div>
+                <div id="rightFlexBox">
+                    <div id="lineChart" style="height: 400px; width: 600px" ></div>
+                    <div id="barChart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Page Content -->
+    
+    <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+    </script>
+
+    
+
+    <script src="js/raj.js"></script>
+    <script src="js/barChart.js"></script>
+    <script src ="js/test.js"></script>
+    <script src="js/map2.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/lineChart.js"></script>
+    <script>
+        loadMap();
+    </script>
+    
+</body>
+<style>
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /* div#outerFlexBox {
+            display: flex;
+            height:max-content;
+            align-items: flex-start;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: max-content;
+            margin-left: 200px;
+            overflow: visible;       
+
+        } */
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+</style>
+</html>
