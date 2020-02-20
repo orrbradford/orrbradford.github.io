@@ -6,6 +6,10 @@ var widthLine = 350;
 var heightLine = 360;
 
 function loadLineChart(location){
+
+    hoverLabel=document.getElementById("hoverLabel")
+    if (hoverLabel) { hoverLabel.remove() }
+
     console.log(location)
     var lineElem = document.getElementById("drawnLineChart")
     if (lineElem) { lineElem.remove() }
@@ -33,23 +37,33 @@ function loadLineChart(location){
         // 8. An array of objects of length N. Each object has key -> value pair, the key being "y" and the value is a random number
         //var dataset = d3.range(n).map(function(d) { return {"y": d3.randomUniform(1)() } })
 
+
+
         // 1. Add the SVG to the page and employ #2
-        var svg = d3.select("#lineChart").append("svg")
+        var svg2 = d3.select("#lineChart").append("svg")
             .attr("width", widthLine + margin.left + margin.right)
             .attr("height", heightLine + margin.top + margin.bottom)
             .attr("id", "drawnLineChart")
             .append("g")
-            .attr("fill","blue")
+            .attr("fill","black")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+          svg2.append("text")
+                  .attr("x", (width / 2)-100)             
+                  .attr("y", 0 - (margin.top / 2)+75)
+                  .attr("text-anchor", "middle")  
+                  .style("font-size", "16px") 
+                  .style("text-decoration", "underline")  
+                  .text("Expenses by Day");
+
         // 3. Call the x axis in a group tag
-        svg.append("g")
+        svg2.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + heightLine + ")")
             .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
 
         // 4. Call the y axis in a group tag
-        svg.append("g")
+        svg2.append("g")
             .attr("class", "y axis")
             .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
@@ -58,7 +72,7 @@ function loadLineChart(location){
             //console.log("checking " + i)
             if(true){
 
-                svg.append("path")
+                svg2.append("path")
                 .attr("id","theLine")
                 .attr("stroke", function(d){
                   /*  console.log("PRINTING LINE DATA")
