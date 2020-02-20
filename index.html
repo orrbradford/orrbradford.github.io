@@ -67,7 +67,7 @@
 
             width: 15px !important;
             right: -5px !important; 
-            bottom: :0px !important;  /*must be (width / 2) * -1 */
+            bottom: 0px !important;  /*must be (width / 2) * -1 */
            /* background: #AA00AA;*/
         }
         .noUi-tooltip {
@@ -82,25 +82,30 @@
 
         div#leftFlexBox {
             display: flex;
-            height: 80vh;
+            height: max-content;
             flex-direction: row;
         }
      
         div#mapAndGraph {
             display: flex;
-            height: 80vh;
+            height: max-content;
             flex-direction: column;
-            margin-left: 200px;
+            
         }
         div#outerFlexBox {
             display: flex;
-            height: 80vh;
+            height:max-content;
+            align-items: flex-start;
             flex-direction: row;
+            flex-wrap: wrap;
+            margin-left: 200px;            
+
         }
         div#rightFlexBox {
             display: flex;
-            height: 80vh;
+            height: max-content;
             flex-direction: column;
+            flex-wrap: wrap;
             
         }
 </style>
