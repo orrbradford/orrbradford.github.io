@@ -61,14 +61,14 @@ function drawGPS(){
                 return projection([d["long"],d["lat"]])[0]; 
             })
             .attr("y", function (d) { return projection([d["long"],d["lat"]])[1]; })
-            .attr('width', '2px')
-            .attr('height', '2px')
+            .attr('width', '4px')
+            .attr('height', '4px')
             .attr("fill", function(d){
                 /*index=parseInt(d["id"])*/
                 return color(d["id"].toString())
 
             })
-            .attr('opacity', 0.5)
+            .attr('opacity', .8)
             .on("click", function(d, i){
                 /*console.log(d);*/
             });
