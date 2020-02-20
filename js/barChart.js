@@ -9,6 +9,11 @@ function drawBar(filterSet){
   var barElem = document.getElementById("bargraph")
   if (barElem) { barElem.remove() }
 
+  barLabel=document.getElementById("barLabel")
+    if (barLabel) { barLabel.remove() }
+
+
+
   // This will sort of work but you'll need to do some more
   // work to get it in the array of objects that you want
   d3.csv('data/employee_loc.csv')
@@ -92,6 +97,8 @@ const groupData2=[{key: "Abila Airport", values:[{grpName:'209', grpValue: 11310
   .attr("width", width1 + margin.left + margin.right)
   .attr("height", height1 + margin.top + margin.bottom)
   .attr("id","bargraph")
+    .attr("viewBox", `0 0 700 400`)
+
 
   var categoriesNames = groupData.map(function(d) { return d.key; });
   var rateNames = groupData[0].values.map(function(d) { return d.grpName; });
@@ -99,6 +106,34 @@ const groupData2=[{key: "Abila Airport", values:[{grpName:'209', grpValue: 11310
   x0.domain(categoriesNames);
   x1.domain(rateNames).rangeRound([0, x0.bandwidth()]);
   y.domain([0, d3.max(groupData, function(key) { return d3.max(key.values, function(d) { return d.grpValue; }); })]);
+ 
+  svg.append("text")
+          .attr("x", (width / 2))             
+          .attr("y", 0 - (margin.top / 2)+50)
+          .attr("text-anchor", "middle")  
+          .style("font-size", "16px") 
+          .style("text-decoration", "underline")  
+          .text("Expenses by Location");
+
+  svg.append("text")
+          .attr("x", (width / 2)-350)             
+          .attr("y", 0 - (margin.top / 2)+150)
+          .attr("text-anchor", "middle")  
+          .style("font-size", "12px") 
+         // .style("text-decoration", "underline")  
+          .text("Expenses");
+
+  svg.append("g")
+    .attr("class", "y axis")
+    /*.attr("transform", "translate(0," + -(120) + ")")*/
+    .call(yAxis)
+      .append("text")
+          .attr("transform", "translate(50,50)")
+          .attr("transform", "rotate(-90)")
+          .style("text-anchor", "end")
+          .style('font-weight','bold')
+          .style("text-anchor", "middle")
+          .text("Value");
 
   svg.append("g")
     .attr("class", "x axis")
@@ -107,29 +142,18 @@ const groupData2=[{key: "Abila Airport", values:[{grpName:'209', grpValue: 11310
     .style("text-anchor", "end");
 
 
-  svg.append("g")
-    .attr("class", "y axis")
-    /*.attr("transform", "translate(0," + -(120) + ")")*/
-    .call(yAxis)
-      .append("text")
-      	.attr("transform", "rotate(-90)")
-          .attr("dy", ".71em")
-          .style("text-anchor", "end")
-          .style('font-weight','bold')
-          .style("text-anchor", "middle")
-          .text("Value");
-
- 
 
   var slice = svg.selectAll(".slice")
     .data(groupData)
     .enter().append("g")
     .attr("class", "g")
     .attr("transform",function(d) { return "translate(" + x0(d.key) + ",0)"; })
-    .on("click", function(d) {
-        loadLineChart(d.key);
+    .on("mouseover", function(d) {
+        loadLineChart(d.key)
     })
-
+    .on("mouseout", function(d) {
+        deleteLineChart()
+    })
 
   slice.selectAll("rect")
   .data(function(d) { return d.values; })
@@ -140,7 +164,6 @@ const groupData2=[{key: "Abila Airport", values:[{grpName:'209', grpValue: 11310
          .attr("y", function(d) { return y(0); })
          .attr("height", function(d) { return height1 - y(0); })
         
-
 
   slice.selectAll("rect")
     .transition()
@@ -173,5 +196,7 @@ const groupData2=[{key: "Abila Airport", values:[{grpName:'209', grpValue: 11310
       .text(function(d) {return employeeList[d]; });
 
   legend.transition().duration(500).delay(function(d,i){ return 1300 + 100 * i; }).style("opacity","1");
+
+
     
 }
