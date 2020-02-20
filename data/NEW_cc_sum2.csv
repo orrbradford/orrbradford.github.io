@@ -1,0 +1,356 @@
+fullName,CarID,location,price
+Albina Hafon,201,Abila Airport,8934.61
+Benito Hawelon,202,Abila Airport,7875.12
+Claudio Hawelon,204,Abila Airport,4039.36
+Dylan Scozzese,205,Abila Airport,11310.69
+Henk Mies,206,Abila Airport,35993.68
+Dylan Scozzese,205,Abila Scrapyard,9482.09
+Lucas Alcazar,1,Abila Zacharo,106
+Lars Azada,2,Abila Zacharo,27.93
+Felix Balas,3,Abila Zacharo,100.82
+Ingrid Barranco,4,Abila Zacharo,106.31
+Isak Baza,5,Abila Zacharo,195.58
+Linnea Bergen,6,Abila Zacharo,50.47
+Isande Borrasca,7,Abila Zacharo,115.13
+Nils Calixto,8,Abila Zacharo,31
+Ada Campo-Corrente,10,Abila Zacharo,68.78
+Gustav Cazar,11,Abila Zacharo,27.3
+Hideki Cocinaro,12,Abila Zacharo,114.13
+Inga Ferro,13,Abila Zacharo,134.06
+Lidelse Dedos,14,Abila Zacharo,28.95
+Loreto Bodrogi,15,Abila Zacharo,116.32
+Isia Vann,16,Abila Zacharo,171.72
+Sven Flecha,17,Abila Zacharo,20.44
+Birgitta Frente,18,Abila Zacharo,16.2
+Stenig Fusil,20,Abila Zacharo,88.36
+Hennie Osvaldo,21,Abila Zacharo,38.41
+Kanon Herrero,22,Abila Zacharo,227.74
+Varja Lagos,23,Abila Zacharo,8.16
+Minke Mies,24,Abila Zacharo,24.87
+Adra Nubarron,25,Abila Zacharo,14.51
+Marin Onda,26,Abila Zacharo,101.79
+Kare Orilla,27,Abila Zacharo,40.65
+Bertrand Ovan,29,Abila Zacharo,65.11
+Felix Resumir,30,Abila Zacharo,132.28
+Sten Sanjorge Jr.,31,Abila Zacharo,15.95
+Orhan Strum,32,Abila Zacharo,111.93
+Brand Tempestad,33,Abila Zacharo,37.73
+Edvard Vann,34,Abila Zacharo,90.56
+Willem Vasco-Pais,35,Abila Zacharo,45.45
+Sven Flecha,17,Ahaggo Museum,120.2
+Kanon Herrero,22,Ahaggo Museum,55.55
+Elsa Orilla,28,Ahaggo Museum,26.91
+Felix Resumir,30,Ahaggo Museum,120.2
+Brand Tempestad,33,Ahaggo Museum,52.14
+Edvard Vann,34,Ahaggo Museum,89.32
+Lucas Alcazar,1,Albert's Fine Clothing,276.9
+Felix Balas,3,Albert's Fine Clothing,364.73
+Ingrid Barranco,4,Albert's Fine Clothing,288
+Isande Borrasca,7,Albert's Fine Clothing,254.29
+Axel Calzas,9,Albert's Fine Clothing,63.36
+Ada Campo-Corrente,10,Albert's Fine Clothing,229.98
+Gustav Cazar,11,Albert's Fine Clothing,88.89
+Inga Ferro,13,Albert's Fine Clothing,91.71
+Vira Frente,19,Albert's Fine Clothing,470.15
+Varja Lagos,23,Albert's Fine Clothing,50.77
+Minke Mies,24,Albert's Fine Clothing,333.23
+Adra Nubarron,25,Albert's Fine Clothing,470.47
+Orhan Strum,32,Albert's Fine Clothing,331.82
+Lars Azada,2,Bean There Done That,162.07
+Felix Balas,3,Bean There Done That,175.35
+Axel Calzas,9,Bean There Done That,240.33
+Gustav Cazar,11,Bean There Done That,351.81
+Lidelse Dedos,14,Bean There Done That,10.37
+Birgitta Frente,18,Bean There Done That,15.24
+Vira Frente,19,Bean There Done That,122.72
+Inga Ferro,13,Brew've Been Served,96.25
+Loreto Bodrogi,15,Brew've Been Served,96.55
+Isia Vann,16,Brew've Been Served,206.12
+Sven Flecha,17,Brew've Been Served,181.34
+Stenig Fusil,20,Brew've Been Served,108.22
+Hennie Osvaldo,21,Brew've Been Served,138.94
+Kanon Herrero,22,Brew've Been Served,147.32
+Varja Lagos,23,Brew've Been Served,398.54
+Minke Mies,24,Brew've Been Served,126.92
+Felix Resumir,30,Brew've Been Served,154.37
+Brand Tempestad,33,Brew've Been Served,333.31
+Edvard Vann,34,Brew've Been Served,205.55
+Ingrid Barranco,4,Brewed Awakenings,111.1
+Isande Borrasca,7,Brewed Awakenings,371.67
+Ada Campo-Corrente,10,Brewed Awakenings,101.27
+Loreto Bodrogi,15,Brewed Awakenings,64.84
+Albina Hafon,201,Carlyle Chemical Inc.,5678.62
+Claudio Hawelon,204,Carlyle Chemical Inc.,227.81
+Irene Nant,207,Carlyle Chemical Inc.,5716.34
+Valeria Morlun,208,Carlyle Chemical Inc.,32144.88
+Isande Borrasca,7,Chostus Hotel,574.08
+Sten Sanjorge Jr.,31,Chostus Hotel,600
+Brand Tempestad,33,Chostus Hotel,472.44
+Linnea Bergen,6,Coffee Cameleon,116.77
+Stenig Fusil,20,Coffee Cameleon,9.16
+Minke Mies,24,Coffee Cameleon,14.99
+Adra Nubarron,25,Coffee Cameleon,114.03
+Bertrand Ovan,29,Coffee Cameleon,182.94
+Lucas Alcazar,1,Daily Dealz,2.01
+Ingrid Barranco,4,Desafio Golf Course,366.49
+Ada Campo-Corrente,10,Desafio Golf Course,389.37
+Sten Sanjorge Jr.,31,Desafio Golf Course,148.22
+Orhan Strum,32,Desafio Golf Course,150.07
+Willem Vasco-Pais,35,Desafio Golf Course,239.35
+Felix Balas,3,Frank's Fuel,52.66
+Loreto Bodrogi,15,Frank's Fuel,65.34
+Lucas Alcazar,1,Frydos Autosupply n' More,10000
+Ingrid Barranco,4,Frydos Autosupply n' More,52.73
+Isande Borrasca,7,Frydos Autosupply n' More,18.91
+Nils Calixto,8,Frydos Autosupply n' More,98.39
+Axel Calzas,9,Frydos Autosupply n' More,103.55
+Gustav Cazar,11,Frydos Autosupply n' More,120.65
+Lidelse Dedos,14,Frydos Autosupply n' More,433.57
+Loreto Bodrogi,15,Frydos Autosupply n' More,459.31
+Isia Vann,16,Frydos Autosupply n' More,260.08
+Sven Flecha,17,Frydos Autosupply n' More,237.08
+Hennie Osvaldo,21,Frydos Autosupply n' More,98.04
+Varja Lagos,23,Frydos Autosupply n' More,194.11
+Minke Mies,24,Frydos Autosupply n' More,42.72
+Adra Nubarron,25,Frydos Autosupply n' More,197.32
+Marin Onda,26,Frydos Autosupply n' More,314.98
+Elsa Orilla,28,Frydos Autosupply n' More,273.87
+Bertrand Ovan,29,Frydos Autosupply n' More,114.98
+Felix Resumir,30,Frydos Autosupply n' More,751.71
+Brand Tempestad,33,Frydos Autosupply n' More,235.27
+Edvard Vann,34,Frydos Autosupply n' More,209.76
+Willem Vasco-Pais,35,Frydos Autosupply n' More,120.67
+Lucas Alcazar,1,Gelatogalore,21.52
+Lars Azada,2,Gelatogalore,63.08
+Felix Balas,3,Gelatogalore,23.23
+Isak Baza,5,Gelatogalore,8.6
+Linnea Bergen,6,Gelatogalore,46.78
+Isande Borrasca,7,Gelatogalore,56.74
+Nils Calixto,8,Gelatogalore,57.93
+Axel Calzas,9,Gelatogalore,70.98
+Ada Campo-Corrente,10,Gelatogalore,81.51
+Inga Ferro,13,Gelatogalore,214.12
+Lidelse Dedos,14,Gelatogalore,104.17
+Loreto Bodrogi,15,Gelatogalore,49.95
+Sven Flecha,17,Gelatogalore,27.26
+Birgitta Frente,18,Gelatogalore,17.31
+Vira Frente,19,Gelatogalore,22.36
+Hennie Osvaldo,21,Gelatogalore,72.06
+Kanon Herrero,22,Gelatogalore,106.65
+Varja Lagos,23,Gelatogalore,119.75
+Minke Mies,24,Gelatogalore,10.62
+Adra Nubarron,25,Gelatogalore,32.82
+Marin Onda,26,Gelatogalore,88.94
+Kare Orilla,27,Gelatogalore,57.95
+Bertrand Ovan,29,Gelatogalore,88.97
+Orhan Strum,32,Gelatogalore,48.67
+Edvard Vann,34,Gelatogalore,23.45
+Willem Vasco-Pais,35,Gelatogalore,70.09
+Hideki Cocinaro,12,General Grocer,363.87
+Inga Ferro,13,General Grocer,126.2
+Vira Frente,19,General Grocer,70.22
+Minke Mies,24,General Grocer,227.28
+Bertrand Ovan,29,General Grocer,177.6
+Felix Resumir,30,General Grocer,108.49
+Edvard Vann,34,General Grocer,285.34
+Lucas Alcazar,1,Guy's Gyros,10.27
+Lars Azada,2,Guy's Gyros,117.99
+Felix Balas,3,Guy's Gyros,72.43
+Ingrid Barranco,4,Guy's Gyros,8.64
+Linnea Bergen,6,Guy's Gyros,39.27
+Isande Borrasca,7,Guy's Gyros,27.49
+Nils Calixto,8,Guy's Gyros,53.3
+Axel Calzas,9,Guy's Gyros,32.8
+Gustav Cazar,11,Guy's Gyros,31.05
+Hideki Cocinaro,12,Guy's Gyros,353.09
+Inga Ferro,13,Guy's Gyros,145.85
+Lidelse Dedos,14,Guy's Gyros,59.61
+Loreto Bodrogi,15,Guy's Gyros,378.69
+Isia Vann,16,Guy's Gyros,454.52
+Sven Flecha,17,Guy's Gyros,448.61
+Birgitta Frente,18,Guy's Gyros,139.3
+Stenig Fusil,20,Guy's Gyros,561.92
+Kanon Herrero,22,Guy's Gyros,207.45
+Varja Lagos,23,Guy's Gyros,416.99
+Minke Mies,24,Guy's Gyros,190.51
+Adra Nubarron,25,Guy's Gyros,53.26
+Marin Onda,26,Guy's Gyros,11.22
+Bertrand Ovan,29,Guy's Gyros,17.44
+Felix Resumir,30,Guy's Gyros,225.41
+Sten Sanjorge Jr.,31,Guy's Gyros,25.79
+Orhan Strum,32,Guy's Gyros,66.01
+Brand Tempestad,33,Guy's Gyros,289
+Edvard Vann,34,Guy's Gyros,171.56
+Willem Vasco-Pais,35,Guy's Gyros,128.92
+Lucas Alcazar,1,Hallowed Grounds,161.39
+Nils Calixto,8,Hallowed Grounds,200.72
+Hideki Cocinaro,12,Hallowed Grounds,213.46
+Lidelse Dedos,14,Hallowed Grounds,95.65
+Birgitta Frente,18,Hallowed Grounds,173.31
+Hennie Osvaldo,21,Hallowed Grounds,128.71
+Marin Onda,26,Hallowed Grounds,80.94
+Kare Orilla,27,Hallowed Grounds,223.93
+Sten Sanjorge Jr.,31,Hallowed Grounds,9.72
+Lucas Alcazar,1,Hippokampos,246.15
+Lars Azada,2,Hippokampos,495.34
+Felix Balas,3,Hippokampos,342.15
+Ingrid Barranco,4,Hippokampos,378.8
+Isak Baza,5,Hippokampos,49.17
+Linnea Bergen,6,Hippokampos,104.86
+Isande Borrasca,7,Hippokampos,246.21
+Nils Calixto,8,Hippokampos,107.35
+Axel Calzas,9,Hippokampos,337.32
+Ada Campo-Corrente,10,Hippokampos,445.49
+Gustav Cazar,11,Hippokampos,343.67
+Lidelse Dedos,14,Hippokampos,12.57
+Loreto Bodrogi,15,Hippokampos,70.76
+Isia Vann,16,Hippokampos,78.08
+Sven Flecha,17,Hippokampos,91.97
+Birgitta Frente,18,Hippokampos,163.37
+Vira Frente,19,Hippokampos,509.47
+Stenig Fusil,20,Hippokampos,15.77
+Hennie Osvaldo,21,Hippokampos,8.75
+Kanon Herrero,22,Hippokampos,101.52
+Minke Mies,24,Hippokampos,304.48
+Adra Nubarron,25,Hippokampos,93.57
+Marin Onda,26,Hippokampos,21.91
+Kare Orilla,27,Hippokampos,76.11
+Felix Resumir,30,Hippokampos,57.07
+Orhan Strum,32,Hippokampos,336.1
+Brand Tempestad,33,Hippokampos,179.45
+Edvard Vann,34,Hippokampos,179.33
+Willem Vasco-Pais,35,Hippokampos,459.06
+Isak Baza,5,Jack's Magical Beans,110.62
+Loreto Bodrogi,15,Jack's Magical Beans,6
+Elsa Orilla,28,Jack's Magical Beans,192.41
+Orhan Strum,32,Jack's Magical Beans,282.79
+Willem Vasco-Pais,35,Jack's Magical Beans,208.85
+Felix Balas,3,Kalami Kafenion,179.9
+Linnea Bergen,6,Kalami Kafenion,140.78
+Isande Borrasca,7,Kalami Kafenion,54.36
+Axel Calzas,9,Kalami Kafenion,22.83
+Ada Campo-Corrente,10,Kalami Kafenion,15.15
+Gustav Cazar,11,Kalami Kafenion,61.54
+Hideki Cocinaro,12,Kalami Kafenion,136.01
+Inga Ferro,13,Kalami Kafenion,23.86
+Lidelse Dedos,14,Kalami Kafenion,46.19
+Isia Vann,16,Kalami Kafenion,31.96
+Sven Flecha,17,Kalami Kafenion,27
+Vira Frente,19,Kalami Kafenion,158.62
+Stenig Fusil,20,Kalami Kafenion,14.77
+Hennie Osvaldo,21,Kalami Kafenion,27.7
+Kanon Herrero,22,Kalami Kafenion,95.25
+Varja Lagos,23,Kalami Kafenion,105.79
+Minke Mies,24,Kalami Kafenion,46.61
+Kare Orilla,27,Kalami Kafenion,73.34
+Elsa Orilla,28,Kalami Kafenion,101.5
+Bertrand Ovan,29,Kalami Kafenion,24.08
+Felix Resumir,30,Kalami Kafenion,82.18
+Orhan Strum,32,Kalami Kafenion,22.39
+Edvard Vann,34,Kalami Kafenion,18.06
+Willem Vasco-Pais,35,Kalami Kafenion,144.23
+Valeria Morlun,208,Katerinas Café,198.81
+Ingrid Barranco,4,Katerinas Café,158.94
+Isak Baza,5,Katerinas Café,53.24
+Linnea Bergen,6,Katerinas Café,127.05
+Isande Borrasca,7,Katerinas Café,57.36
+Nils Calixto,8,Katerinas Café,451.66
+Axel Calzas,9,Katerinas Café,35.06
+Ada Campo-Corrente,10,Katerinas Café,13.68
+Gustav Cazar,11,Katerinas Café,36.56
+Hideki Cocinaro,12,Katerinas Café,100.56
+Inga Ferro,13,Katerinas Café,94.89
+Lidelse Dedos,14,Katerinas Café,359.16
+Loreto Bodrogi,15,Katerinas Café,59.55
+Isia Vann,16,Katerinas Café,100.63
+Birgitta Frente,18,Katerinas Café,198.9
+Vira Frente,19,Katerinas Café,121.79
+Hennie Osvaldo,21,Katerinas Café,309.28
+Kanon Herrero,22,Katerinas Café,55.6
+Varja Lagos,23,Katerinas Café,176.38
+Minke Mies,24,Katerinas Café,106.59
+Adra Nubarron,25,Katerinas Café,353.05
+Marin Onda,26,Katerinas Café,403.91
+Kare Orilla,27,Katerinas Café,281.65
+Bertrand Ovan,29,Katerinas Café,706.48
+Felix Resumir,30,Katerinas Café,19.65
+Orhan Strum,32,Katerinas Café,100.19
+Brand Tempestad,33,Katerinas Café,11.08
+Edvard Vann,34,Katerinas Café,99.32
+Lucas Alcazar,1,Kronos Mart,194.51
+Lars Azada,2,Kronos Mart,286.24
+Ingrid Barranco,4,Kronos Mart,203.91
+Isak Baza,5,Kronos Mart,58.85
+Ada Campo-Corrente,10,Kronos Mart,150.36
+Hideki Cocinaro,12,Kronos Mart,298.83
+Stenig Fusil,20,Kronos Mart,159.06
+Varja Lagos,23,Kronos Mart,87.66
+Orhan Strum,32,Kronos Mart,277.26
+Albina Hafon,201,Kronos Pipe and Irrigation,3134.95
+Irene Nant,207,Kronos Pipe and Irrigation,10523.57
+Albina Hafon,201,Maximum Iron and Steel,3549.36
+Irene Nant,207,Maximum Iron and Steel,12658.68
+Adan Morlun,200,Nationwide Refinery,6416.93
+Benito Hawelon,202,Nationwide Refinery,5899.72
+Cecilia Morluniau,203,Nationwide Refinery,12066.4
+Claudio Hawelon,204,Nationwide Refinery,2302.73
+Dylan Scozzese,205,Nationwide Refinery,6641.84
+Valeria Morlun,208,Nationwide Refinery,10170.56
+Linnea Bergen,6,Octavio's Office Supplies,64.51
+Stenig Fusil,20,Octavio's Office Supplies,131.73
+Edvard Vann,34,Octavio's Office Supplies,139.72
+Albina Hafon,201,Ouzeri Elian,19.82
+Lucas Alcazar,1,Ouzeri Elian,230.32
+Lars Azada,2,Ouzeri Elian,14.01
+Ingrid Barranco,4,Ouzeri Elian,26.09
+Isak Baza,5,Ouzeri Elian,504.48
+Linnea Bergen,6,Ouzeri Elian,8.93
+Isande Borrasca,7,Ouzeri Elian,38.9
+Axel Calzas,9,Ouzeri Elian,45
+Ada Campo-Corrente,10,Ouzeri Elian,69.58
+Gustav Cazar,11,Ouzeri Elian,52.67
+Hideki Cocinaro,12,Ouzeri Elian,118.05
+Inga Ferro,13,Ouzeri Elian,24.72
+Loreto Bodrogi,15,Ouzeri Elian,47.71
+Sven Flecha,17,Ouzeri Elian,45.32
+Birgitta Frente,18,Ouzeri Elian,30.93
+Vira Frente,19,Ouzeri Elian,118.81
+Stenig Fusil,20,Ouzeri Elian,42.96
+Hennie Osvaldo,21,Ouzeri Elian,20.46
+Kanon Herrero,22,Ouzeri Elian,62.2
+Varja Lagos,23,Ouzeri Elian,143.87
+Adra Nubarron,25,Ouzeri Elian,47.37
+Marin Onda,26,Ouzeri Elian,80.64
+Elsa Orilla,28,Ouzeri Elian,195.6
+Bertrand Ovan,29,Ouzeri Elian,56.62
+Felix Resumir,30,Ouzeri Elian,59.51
+Orhan Strum,32,Ouzeri Elian,226.95
+Edvard Vann,34,Ouzeri Elian,95.03
+Ingrid Barranco,4,Roberts and Sons,125.35
+Linnea Bergen,6,Roberts and Sons,62.47
+Isia Vann,16,Roberts and Sons,481.86
+Birgitta Frente,18,Roberts and Sons,266.69
+Hennie Osvaldo,21,Roberts and Sons,223.81
+Minke Mies,24,Roberts and Sons,155.76
+Marin Onda,26,Roberts and Sons,256.24
+Lucas Alcazar,1,Shoppers' Delight,149.2
+Axel Calzas,9,Shoppers' Delight,160.69
+Ada Campo-Corrente,10,Shoppers' Delight,162
+Inga Ferro,13,Shoppers' Delight,483.9
+Loreto Bodrogi,15,Shoppers' Delight,216.43
+Isia Vann,16,Shoppers' Delight,293.67
+Sven Flecha,17,Shoppers' Delight,366.04
+Birgitta Frente,18,Shoppers' Delight,157.45
+Kanon Herrero,22,Shoppers' Delight,392.39
+Adra Nubarron,25,Shoppers' Delight,30.39
+Marin Onda,26,Shoppers' Delight,135.78
+Bertrand Ovan,29,Shoppers' Delight,51.5
+Felix Resumir,30,Shoppers' Delight,144.4
+Orhan Strum,32,Shoppers' Delight,258.33
+Adan Morlun,200,Stewart and Sons Fabrication,6283.64
+Benito Hawelon,202,Stewart and Sons Fabrication,3757.04
+Cecilia Morluniau,203,Stewart and Sons Fabrication,24595.5
+Claudio Hawelon,204,Stewart and Sons Fabrication,4195.49
+Dylan Scozzese,205,Stewart and Sons Fabrication,1880.8
+Lucas Alcazar,1,U-Pump,55.25
+Varja Lagos,23,U-Pump,59.51

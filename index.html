@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <script src="js/d3.min.js"></script>
     <script src="js/papaparse.min.js"></script>
-    <script src="js/topojson.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://unpkg.com/d3-simple-slider"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-    <!-- <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script> -->
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src='js/nouislider.min.js'></script>
+    <link rel="stylesheet" href="css/nouislider.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    
 </head>
+
 <style>
     .bar:hover {
         opacity: 0.8 ;
     }
     div{
-        font-family: "Arial";
+        font-family: "Garamond";
     }
     
     div.tooltip {
@@ -28,104 +32,195 @@
         border-radius: 8px;
         pointer-events: none;
     }
-</style>
-<body> 
-    <bdy></bdy>
-    <div>
-        Day: <input type="text" id="Day" value="1/6/14"><br>
-        ID: <input type="text" id="ID" value="4"><br>
-        <button onclick=reload()>Reload</button>
-        <br>
-        <label for ="dayRange">Days (6-14) </label>
-        <input type="range" id="dayRange" min="6" max = "14" name ="Days"/>
-        <br>
-        <select id="ids" height = "20px" multiple>
-            <option id='1'>1</option>
-            <option id='2'>2</option>
-            <option id='3'>3</option>
-            <option id='4'>4</option>
-            <option id='5'>5</option>
-            <option id='6'>6</option>
-            <option id='7'>7</option>
-            <option id='8'>8</option>
-            <option id='9'>9</option>
-            <option id='10'>10</option>
-            <option id='11'>11</option>
-            <option id='12'>12</option>
-            <option id='13'>13</option>
-            <option id='14'>14</option>
-            <option id='15'>15</option>
-            <option id='16'>16</option>
-            <option id='17'>17</option>
-            <option id='18'>18</option>
-            <option id='19'>19</option>
-            <option id='20'>20</option>
-            <option id='21'>21</option>
-            <option id='22'>22</option>
-            <option id='23'>23</option>
-            <option id='24'>24</option>
-            <option id='25'>25</option>
-            <option id='26'>26</option>
-            <option id='27'>27</option>
-            <option id='28'>28</option>
-            <option id='29'>29</option>
-            <option id='30'>30</option>
-            <option id='31'>31</option>
-            <option id='32'>32</option>
-            <option id='33'>33</option>
-            <option id='34'>34</option>
-            <option id='35'>35</option>
-        </select>
-        <div>
-            <ul id = "filterList">
 
-            </ul>
+    svg#bargraph {
+    	transform: translate(-20px, 0px);
+    }
+
+    svg#bargraph .x.axis .tick text  {
+        transform: rotate(-45deg) translate(-5px, 20px);
+    }
+
+
+	svg#bargraph .y.axis {
+	        transform: translate(50px, -120px);
+	    }
+
+    div#sliderLabel{
+        color:white;
+        font-style:bold;
+        font-size:16px;
+    }
+    
+    .noUi-connect {
+            background: lightgrey;
+        }
+        .noUi-horizontal .noUi-handle, .noUi-vertical .noUi-handle {
+            background: lightgrey;
+ 
+        }
+        .noUi-target.noUi-horizontal .noUi-tooltip {
+            background-color: lightgrey;
+        }
+        .noUi-handle {
+            height: 25px !important;
+
+            width: 15px !important;
+            right: -5px !important; 
+            bottom: :0px !important;  /*must be (width / 2) * -1 */
+           /* background: #AA00AA;*/
+        }
+        .noUi-tooltip {
+            display: none;
+        }
+        .noUi-active .noUi-tooltip {
+            display: block;
+        }
+
+        svg #lineChart
+
+
+        div#leftFlexBox {
+            display: flex;
+            height: 80vh;
+            flex-direction: row;
+        }
+     
+        div#mapAndGraph {
+            display: flex;
+            height: 80vh;
+            flex-direction: column;
+            margin-left: 200px;
+        }
+        div#outerFlexBox {
+            display: flex;
+            height: 80vh;
+            flex-direction: row;
+        }
+        div#rightFlexBox {
+            display: flex;
+            height: 80vh;
+            flex-direction: column;
+            
+        }
+</style>
+
+
+<body> 
+
+    <div>
+        <div id="sliderLabel" style="position: absolute; left: 300px;top:20px" fill="white">Days (6-14)</div>
+        <div id = "slider" style="position: absolute; left: 400px; width:600px; top:20px"></div>
+
+        <div id="sliderLabel" style="position: absolute; left: 300px;top:50px" >Hours </div>
+        <div id = "slider1" style="position: absolute; left: 400px; width:600px;top:50px"></div>
+
+    <!-- Sidebar -->
+            <div id="mySidebar">
+                <div class="w3-sidebar w3-bar-block w3-border-right" style="display:block">
+                  <button onclick="w3_close()" class="w3-bar-item w3-large">&times;</button>
+                    <div id="ids" style="position: absolute; width: 200px; left:20px; top:50px">
+                        <input type="checkbox" id='1'> <label> Lucas Alcazar</label><br>
+                        <input type="checkbox" id='2'> <label> Lars Azada</label><br>
+                        <input type="checkbox" id='3'> <label> Felix Balas</label><br>
+                        <input type="checkbox" id='4'> <label> Ingrid Barranco</label><br>
+                        <input type="checkbox" id='5'> <label> Isak Baza</label><br>
+                        <input type="checkbox" id='6'> <label> Linnea Bergen</label><br>
+                        <input type="checkbox" id='7'> <label> Isande Borrasca</label><br>
+                        <input type="checkbox" id='8'> <label> Nils Calixto</label><br>
+                        <input type="checkbox" id='9'> <label>Axel Calzas</label><br>
+                        <input type="checkbox" id='10'> <label>Ada Campo-Corrente</label><br>
+                        <input type="checkbox" id='11'> <label>Gustav Cazar</label><br>
+                        <input type="checkbox" id='12'> <label>Hideki Cocinaro</label><br>
+                        <input type="checkbox" id='13'> <label>Inga Ferro</label><br>
+                        <input type="checkbox" id='14'> <label>Lidelse Dedos</label><br>
+                        <input type="checkbox" id='15'> <label>Loreto Bodrogi</label><br>
+                        <input type="checkbox" id='16'> <label>Isia Vann</label><br>
+                        <input type="checkbox" id='17'> <label>Sven Flecha</label><br>
+                        <input type="checkbox" id='18'> <label>Birgitta Frente</label><br>
+                        <input type="checkbox" id='19'> <label>Vira Frente</label><br>
+                        <input type="checkbox" id='20'> <label>Stenig Fusil</label><br>
+                        <input type="checkbox" id='21'> <label>Hennie Osvaldo</label><br>
+                        <input type="checkbox" id='22'> <label>Kanon Herrero</label><br>
+                        <input type="checkbox" id='23'> <label>Varja Lagos</label><br>
+                        <input type="checkbox" id='24'> <label>Minke Mies</label><br>
+                        <input type="checkbox" id='25'> <label>Adra Nubarron</label><br>
+                        <input type="checkbox" id='26'> <label>Marin Onda</label><br>
+                        <input type="checkbox" id='27'> <label>Kare Orilla</label><br>
+                        <input type="checkbox" id='28'> <label>Elsa Orilla</label><br>
+                        <input type="checkbox" id='29'> <label>Bertrand Ovan</label><br>
+                        <input type="checkbox" id='30'> <label>Felix Resumir</label><br>
+                        <input type="checkbox" id='31'> <label>Sten Sanjorge Jr.</label><br>
+                        <input type="checkbox" id='32'> <label>Orhan Strum</label><br>
+                        <input type="checkbox" id='33'> <label>Brand Tempestad</label><br>
+                        <input type="checkbox" id='34'> <label>Edvard Vann</label><br>
+                        <input type="checkbox" id='35'> <label>Willem Vasco-Pais</label><br>
+                        <input type="checkbox" id='206'> <label>Adan Morlun</label><br>
+                        <input type="checkbox" id='201'> <label>Albina Hafon</label><br>
+                        <input type="checkbox" id='202'> <label>Benito Hawelon</label><br>
+                        <input type="checkbox" id='207'> <label>Cecilia Morluniau</label><br>
+                        <input type="checkbox" id='203'> <label>Claudio Hawelon</label><br>
+                        <input type="checkbox" id='209'> <label>Dylan Scozzese</label><br>
+                        <input type="checkbox" id='204'> <label>Henk Mies</label><br>
+                        <input type="checkbox" id='208'> <label>Irene Nant</label><br>
+                        <input type="checkbox" id='205'> <label>Valeria Morlun</label><br>
+                        <input type="checkbox" id='101'> <label>Truck 1</label><br>
+                        <input type="checkbox" id='104'> <label>Truck 2</label><br>
+                        <input type="checkbox" id='105'> <label>Truck 3</label><br>
+                        <input type="checkbox" id='106'> <label>Truck 4</label><br>
+                        <input type="checkbox" id='107'> <label>Truck 5</label><br>
+
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w3-grey w3-xxxlarge">
+              <button class="w3-button w3-grey w3-xlarge" onclick="w3_open()">></button>
+              <div class="w3-container">
+                <h1> </h1>
+              </div>
+            </div>
+        </div>
+    <!-- Page Content -->
+    
+    <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+    </script>
+
+    <div id="outerFlexBox">
+        <div id="leftFlexBox">
+            
+            <div id="mapAndGraph">
+                <div id="bdy"></div>
+                 <div id="graph">
+                    <svg id="graphsvg" ></svg>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="rightFlexBox">
+            <div id="lineChart" style="height: 400px; width: 600px" ></div>
+            <div id="barChart"  ></div>
         </div>
     </div>
-     
-    <script src="js/test.js"></script>
+
+    <script src="js/raj.js"></script>
+    <script src="js/barChart.js"></script>
+    <script src ="js/test.js"></script>
+    <script src="js/map2.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/lineChart.js"></script>
     <script>
-        var idfilter = new Set()
-        document.getElementById("ids").addEventListener("change", function(event){
-            console.log(document.getElementById("ids").value)
-            var val = document.getElementById("ids").value
-            var li = document.createElement("li")
-            li.id = val
-            li.innerHTML = val
-            li.addEventListener("click", function(){
-                document.getElementById("filterList").removeChild(this)
-            });
-            document.getElementById("filterList").append(li);
-        })
-        
-        var observer = new MutationObserver(filterUpdate)
-        const config = { attributes: true, childList: true, subtree: true };
-        observer.observe(document.getElementById("filterList"), config)
-        function filterUpdate(){
-            console.log("list changing")
-            ch = document.getElementById("filterList").children
-            console.log(ch)
-            for(var i = 0; i < ch.length; i++){
-                console.log(ch[i].id)
-                idfilter.add(ch[i].id)
-            }
-        }
+        loadMap();
     </script>
-    <style>
-        ul{border: 2px;}
-        select{height: 400px;}
-        select>option{height: 40px; width: 40px; text-align: center;}
-    </style>
-
-
-
-    <!-- Mel's Stuff -->
-    <div id='slider'></div>
-    <div id='report' align="center"></div>
-
-    <div id='bar'></div>
-
-    <script src='js/business.js'> </script>
+    
 </body>
 
 </html>

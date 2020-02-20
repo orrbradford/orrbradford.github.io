@@ -1,0 +1,126 @@
+fullName,location,Unnamed: 0,price
+1.0,Abila Airport,4,4039.36
+1.0,Abila Scrapyard,78,9482.09
+1.0,Abila Zacharo,75,59.0
+1.0,Ahaggo Museum,103,147.11
+1.0,Albert's Fine Clothing,250,529.6999999999999
+1.0,Carlyle Chemical Inc.,460,10709.560000000001
+1.0,Chostus Hotel,138,600.0
+1.0,Coffee Shack,1272,123.64
+1.0,Daily Dealz,174,2.01
+1.0,Frank's Fuel,404,118.0
+1.0,Frydos Autosupply n' More,210,312.73
+1.0,Gelatogalore,471,106.74
+1.0,General Grocer,1947,1310.23
+1.0,Kalami Kafenion,313,20.33
+1.0,Kronos Mart,1705,1125.09
+1.0,Kronos Pipe and Irrigation,2103,13658.519999999999
+1.0,Maximum Iron and Steel,2181,16208.04
+1.0,Nationwide Refinery,753,966.22
+1.0,Octavio's Office Supplies,791,262.74
+1.0,Roberts and Sons,1259,721.25
+1.0,Shoppers' Delight,2597,1282.3500000000001
+1.0,Stewart and Sons Fabrication,891,3897.79
+1.0,U-Pump,915,114.75999999999999
+2.0,Abila Airport,11,9520.58
+2.0,Ahaggo Museum,101,317.21000000000004
+2.0,Albert's Fine Clothing,557,3337.41
+2.0,Brewed Awakenings,107,95.24
+2.0,Carlyle Chemical Inc.,122,2234.17
+2.0,Chostus Hotel,529,1046.52
+2.0,Coffee Cameleon,150,130.33
+2.0,Frydos Autosupply n' More,434,434.27
+2.0,Gelatogalore,684,150.68
+2.0,General Grocer,248,286.09
+2.0,Jack's Magical Beans,603,185.74
+2.0,Kalami Kafenion,312,68.95
+2.0,Kronos Mart,340,306.36
+2.0,Nationwide Refinery,752,12043.029999999999
+2.0,Octavio's Office Supplies,391,204.23
+2.0,Roberts and Sons,423,396.42
+2.0,Shoppers' Delight,1306,982.7
+2.0,Stewart and Sons Fabrication,2233,27330.0
+3.0,Abila Airport,26,34897.95
+3.0,Albert's Fine Clothing,68,451.67
+3.0,Bean There Done That,73,32.59
+3.0,Brewed Awakenings,829,398.31999999999994
+3.0,Carlyle Chemical Inc.,355,27003.0
+3.0,Coffee Cameleon,143,48.59
+3.0,Desafio Golf Course,187,548.56
+3.0,Frydos Autosupply n' More,1083,2099.0899999999997
+3.0,Kronos Mart,346,432.53
+3.0,Nationwide Refinery,765,14584.38
+3.0,Ouzeri Elian,405,105.16
+3.0,Roberts and Sons,424,454.51
+3.0,Shoppers' Delight,431,545.17
+3.0,Stewart and Sons Fabrication,884,9484.68
+4.0,Abila Airport,3,19695.57
+4.0,Abila Zacharo,33,221.58
+4.0,Bean There Done That,222,424.63
+4.0,Brewed Awakenings,99,155.32
+4.0,Carlyle Chemical Inc.,115,3820.92
+4.0,Coffee Cameleon,1011,447.85
+4.0,Frydos Autosupply n' More,646,11571.599999999999
+4.0,Gelatogalore,456,172.66000000000003
+4.0,Guy's Gyros,255,141.54
+4.0,Jack's Magical Beans,2077,533.71
+4.0,Kalami Kafenion,626,310.31
+4.0,Nationwide Refinery,1131,15904.55
+4.0,Ouzeri Elian,413,169.72
+5.0,Abila Zacharo,115,514.58
+5.0,Bean There Done That,383,445.42
+5.0,Coffee Cameleon,151,48.72
+5.0,Desafio Golf Course,194,744.94
+5.0,Frydos Autosupply n' More,435,1799.81
+5.0,Gelatogalore,462,417.15999999999997
+5.0,Guy's Gyros,256,154.26
+5.0,Jack's Magical Beans,295,81.22
+5.0,Kalami Kafenion,927,511.25
+5.0,Ouzeri Elian,1214,662.39
+5.0,Shoppers' Delight,432,688.9
+6.0,Abila Zacharo,156,1217.53
+6.0,Frydos Autosupply n' More,209,1192.19
+6.0,Gelatogalore,465,458.91
+6.0,Guy's Gyros,262,276.61
+6.0,Kalami Kafenion,1253,756.63
+6.0,Ouzeri Elian,1627,992.0
+7.0,Abila Zacharo,104,846.56
+7.0,Bean There Done That,77,175.25
+7.0,Hallowed Grounds,271,113.17
+7.0,Hippokampos,291,490.57
+7.0,Kalami Kafenion,625,568.72
+7.0,Ouzeri Elian,404,177.25
+8.0,Gelatogalore,451,642.43
+8.0,Hallowed Grounds,273,158.06
+8.0,Ouzeri Elian,818,553.61
+9.0,Hallowed Grounds,1071,806.3299999999999
+9.0,Hippokampos,290,471.03
+9.0,KaterinaÂs CafÃ©,333,377.94
+9.0,Ouzeri Elian,810,543.6
+10.0,Gelatogalore,224,381.09
+10.0,Hallowed Grounds,806,533.5899999999999
+11.0,Guy's Gyros,513,947.75
+11.0,Hallowed Grounds,274,237.13
+11.0,Hippokampos,1136,1550.58
+11.0,KaterinaÂs CafÃ©,650,683.34
+12.0,Guy's Gyros,510,757.3199999999999
+12.0,Hippokampos,568,1247.65
+13.0,Guy's Gyros,770,1327.53
+13.0,Hippokampos,564,1003.8599999999999
+13.0,KaterinaÂs CafÃ©,331,445.46
+14.0,Brew've Been Served,182,626.37
+14.0,Guy's Gyros,515,752.38
+14.0,Hippokampos,568,997.47
+14.0,KaterinaÂs CafÃ©,329,487.51
+15.0,Brew've Been Served,270,948.3
+15.0,Guy's Gyros,510,988.8599999999999
+15.0,KaterinaÂs CafÃ©,650,1115.8899999999999
+16.0,Brew've Been Served,176,342.63
+16.0,Hippokampos,278,458.39
+16.0,KaterinaÂs CafÃ©,322,576.32
+17.0,Brew've Been Served,267,1206.74
+17.0,Hippokampos,288,456.35
+17.0,KaterinaÂs CafÃ©,979,1749.73
+18.0,KaterinaÂs CafÃ©,325,721.79
+19.0,KaterinaÂs CafÃ©,320,495.51
+20.0,KaterinaÂs CafÃ©,332,632.88
