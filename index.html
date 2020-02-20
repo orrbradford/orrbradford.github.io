@@ -16,6 +16,53 @@
 </head>
 
 <style>
+	.modal {
+	  display: none;
+	  position: fixed;
+	  z-index: 1;
+	  padding-top: 100px;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	  overflow: auto;
+	  background-color: rgb(0,0,0);
+	  background-color: rgba(0,0,0,0.4);
+	}
+
+
+	.modal-content {
+	  background-color: #fefefe;
+	  margin-left: 250px;
+	  padding: 20px;
+	  border: 1px solid #888;
+	  width: 80%;
+	  text-align: center;
+	}
+
+
+	.close {
+	  color: #aaaaaa;
+	  float: right;
+	  font-size: 28px;
+	  font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+	  color: #000;
+	  text-decoration: none;
+	  cursor: pointer;
+	}
+
+	.helpbtn{
+		margin-left:20px;
+	}
+
+	.helpbtn:hover {
+	    cursor: pointer;
+	}
+
     .bar:hover {
         opacity: 0.8 ;
     }
@@ -112,7 +159,36 @@
 
 
 <body> 
+	<div id="mapModal" class="modal">
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <p>Some text in the Modal..</p>
+	  </div>
+	</div>
 
+	<div id="nwModal" class="modal">
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <p>Some text in the Modal..</p>
+	  </div>
+	</div>
+
+	<div id="barModal" class="modal">
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <p>Some text in the Modal..</p>
+	  </div>
+	</div>
+
+	<div id="helpModal" class="modal" style="display: block">
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <h3>Patterns at GAStech</h3><br>
+	    <p></p>
+	  </div>
+	</div>
+
+	
     <div>
         <div id="sliderLabel" style="position: absolute; left: 300px;top:20px" fill="white">Days (6-14)</div>
         <div id = "slider" style="position: absolute; left: 400px; width:600px; top:20px"></div>
@@ -120,6 +196,15 @@
         <div id="sliderLabel" style="position: absolute; left: 300px;top:50px" >Hours </div>
         <div id = "slider1" style="position: absolute; left: 400px; width:600px;top:50px"></div>
 
+        <div id="helpButtons" style="float: right; margin-top: 10px; margin-right: 20px">
+	        <img class="helpbtn" id="mapBtn" style="height:50px; width:50px;" src="https://www.freepngimg.com/thumb/map/62873-map-computer-location-icon-icons-free-transparent-image-hd.png"></img>
+
+			<img class="helpbtn" id="nwBtn" style="height:50px; width:50px;" src="https://www.pinclipart.com/picdir/big/85-859673_people-network-icon-png-clipart.png"></img>
+
+			<img class="helpbtn" id="barBtn" style="height:50px; width:50px;" src="https://cdn4.iconfinder.com/data/icons/online-marketing-double-colour-black-and-blue-vol-/52/bar__barchart__business__graph__report__analytics__diagram-512.png"></img>
+
+			<img class="helpbtn" id="helpBtn" style="height:50px; width:50px;" src="https://www.clipartmax.com/png/full/119-1198195_%C2%A0-question-mark-in-head.png"></img>
+		</div>
     <!-- Sidebar -->
             <div id="mySidebar">
                 <div class="w3-sidebar w3-bar-block w3-border-right" style="display:block">
@@ -189,14 +274,75 @@
     <!-- Page Content -->
     
     <script>
-    function w3_open() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
+	    function w3_open() {
+	      document.getElementById("mySidebar").style.display = "block";
+	    }
 
-    function w3_close() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-    </script>
+	    function w3_close() {
+	      document.getElementById("mySidebar").style.display = "none";
+	    }
+
+		var mapmodal = document.getElementById("mapModal");
+		var mapbtn = document.getElementById("mapBtn");
+		var span = document.getElementsByClassName("close")[0];
+		mapbtn.onclick = function() {
+		  mapmodal.style.display = "block";
+		}
+		span.onclick = function() {
+		  mapmodal.style.display = "none";
+		}
+		window.onclick = function(event) {
+		  if (event.target == mapmodal) {
+		    mapmodal.style.display = "none";
+		  }
+		}
+
+		var nwmodal = document.getElementById("nwModal");
+		var nwbtn = document.getElementById("nwBtn");
+		var span = document.getElementsByClassName("close")[1];
+		nwbtn.onclick = function() {
+		  nwmodal.style.display = "block";
+		}
+		span.onclick = function() {
+		  nwmodal.style.display = "none";
+		}
+		window.onclick = function(event) {
+		  if (event.target == nwmodal) {
+		    nwmodal.style.display = "none";
+		  }
+		}
+
+		var barmodal = document.getElementById("barModal");
+		var barbtn = document.getElementById("barBtn");
+		var span = document.getElementsByClassName("close")[2];
+		barbtn.onclick = function() {
+		  barmodal.style.display = "block";
+		}
+		span.onclick = function() {
+		  barmodal.style.display = "none";
+		}
+		window.onclick = function(event) {
+		  if (event.target == barmodal) {
+		    barmodal.style.display = "none";
+		  }
+		}
+
+		var helpmodal = document.getElementById("helpModal");
+		var helpbtn = document.getElementById("helpBtn");
+		var span = document.getElementsByClassName("close")[3];
+		helpbtn.onclick = function() {
+		  helpmodal.style.display = "block";
+		}
+		span.onclick = function() {
+		  helpmodal.style.display = "none";
+		}
+		window.onclick = function(event) {
+		  if (event.target == helpmodal) {
+		    helpmodal.style.display = "none";
+		  }
+		}
+
+	</script>	
 
     <div id="outerFlexBox">
         <div id="leftFlexBox">
